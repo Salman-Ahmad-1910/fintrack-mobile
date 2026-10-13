@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Release network policy: HTTPS only, validated against the system trust
+  store. Unencrypted traffic is refused so tokens and financial data never
+  travel in the clear. Do not add user or self signed trust anchors here.
+  Install a valid certificate on the FinTrack server instead.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

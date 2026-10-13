@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Debug-only network policy (overrides src/main for `flutter run`): allows
+  plain HTTP so a developer can point the app at a local Go server started with
+  `./fintrack-erp` in dev mode (e.g. http://192.168.x.x:8090). Certificate validation
+  for HTTPS is unchanged. Release builds never include this file.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>
